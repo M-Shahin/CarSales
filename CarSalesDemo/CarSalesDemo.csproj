@@ -222,6 +222,10 @@
     <Compile Include="Migrations\202009150640402_AddCarBodyTypeViewModel.Designer.cs">
       <DependentUpon>202009150640402_AddCarBodyTypeViewModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009150646266_PopulateCarBodyTypes.cs" />
+    <Compile Include="Migrations\202009150646266_PopulateCarBodyTypes.Designer.cs">
+      <DependentUpon>202009150646266_PopulateCarBodyTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BodyType.cs" />
@@ -353,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009150640402_AddCarBodyTypeViewModel.resx">
       <DependentUpon>202009150640402_AddCarBodyTypeViewModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009150646266_PopulateCarBodyTypes.resx">
+      <DependentUpon>202009150646266_PopulateCarBodyTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

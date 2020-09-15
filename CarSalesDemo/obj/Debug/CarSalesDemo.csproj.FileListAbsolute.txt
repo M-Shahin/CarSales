@@ -343,3 +343,4 @@ C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.
 C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.Migrations.addRequiredPropertiesForVehicle.resources
 C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.Migrations.updateDataTypeInVehicle.resources
 C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.Migrations.AddCarBodyTypeViewModel.resources
+C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.Migrations.PopulateCarBodyTypes.resources
