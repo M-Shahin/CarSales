@@ -1,0 +1,28 @@
+﻿@model CarSalesDemo.ViewModel.VehicleFormViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Car for Sale</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Build your own Vehicle</h2>
+    </div>    
+</div>
+
+<div class="form-group">
+    @Html.DropDownListFor(c => c.Vehicle.VehicleTypeId, 
+                        new SelectList(Model.VehicleTypes, "Id", "VehicleTypeName"), 
+                        "-- Select Vehicle Type --",
+                        new { @class = "form-control" })
+
+    @*@Html.ValidationMessageFor(m => m.VehicleTypeId)*@
+</div>
+
+@Html.ActionLink("Create", "Create", "Cars", null, new { @class = "btn btn-primary"})
+
+@*<button type="submit" class="btn btn-primary">Create</button>*@
