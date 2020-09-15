@@ -7,8 +7,7 @@ using System.Web;
 namespace CarSalesDemo.Models
 {
     public class Vehicle
-    {
-        
+    {        
         public int Id { get; set; }
         public VehicleType VehicleType { get; set; }
         public byte VehicleTypeId { get; set; }

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using CarSalesDemo.Models;
+using CarSalesDemo.ViewModel;
 
 namespace CarSalesDemo.Controllers
 {
@@ -42,8 +39,6 @@ namespace CarSalesDemo.Controllers
         }
 
         // POST: Cars/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost] 
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,NumberOfDoors,NumberOfWheels,BodyTypeId,VehicleTypeId,Make,Model,Engine")] Car car)
@@ -57,6 +52,36 @@ namespace CarSalesDemo.Controllers
 
             return View(car);
         }
+
+        //// POST: Cars/Save
+        //[HttpPost]
+        //public ActionResult Save(Car car)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        var viewModel = new VehicleFormViewModel()
+        //        {
+        //            MovieTypes = _context.MovieTypes.ToList()
+        //        };
+        //        return View("MovieForm", viewModel);
+        //    }
+
+        //    if (movie.Id == 0)
+        //        _context.Movies.Add(movie);
+        //    else
+        //    {
+        //        var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
+
+        //        movieInDb.Name = movie.Name;
+        //        movieInDb.MovieTypeId = movie.MovieTypeId;
+        //        movieInDb.ReleaseDate = movie.ReleaseDate;
+        //        movieInDb.MovieType = movie.MovieType;
+        //        movieInDb.NumberInStock = movie.NumberInStock;
+        //    }
+        //    _context.SaveChanges();
+
+        //    return RedirectToAction("Index", "Movies");
+        //}
 
         // GET: Cars/Edit/5
         public ActionResult Edit(int? id)
@@ -74,8 +99,6 @@ namespace CarSalesDemo.Controllers
         }
 
         // POST: Cars/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,NumberOfDoors,NumberOfWheels,BodyTypeId,VehicleTypeId,Make,Model,Engine")] Car car)
