@@ -9,12 +9,23 @@ namespace CarSalesDemo.Controllers
 {
     public class CarsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext _context = new ApplicationDbContext();
+
+        public CarsController()
+        {
+            _context = new ApplicationDbContext();
+        }
 
         // GET: Cars
         public ActionResult Index()
         {
-            return View(db.Cars.ToList());
+            //var bodyTypes = _context.BodyTypes.ToList();
+            //var viewModel = new CarBodyTypeViewModel
+            //{
+            //    BodyTypes = bodyTypes
+            //};
+            //return View(viewModel);
+            return View(_context.Cars.ToList());
         }
 
         // GET: Cars/Details/5
@@ -24,7 +35,7 @@ namespace CarSalesDemo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Car car = db.Cars.Find(id);
+            Car car = _context.Cars.Find(id);
             if (car == null)
             {
                 return HttpNotFound();
@@ -35,53 +46,49 @@ namespace CarSalesDemo.Controllers
         // GET: Cars/Create
         public ActionResult Create()
         {
-            return View();
+            var bodyTypes = _context.BodyTypes.ToList();
+            var viewModel = new CarBodyTypeViewModel
+            {
+                BodyTypes = bodyTypes
+            };
+            return View(viewModel);
         }
 
         // POST: Cars/Create
-        [HttpPost] 
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,NumberOfDoors,NumberOfWheels,BodyTypeId,VehicleTypeId,Make,Model,Engine")] Car car)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                db.Cars.Add(car);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var viewModel = new CarBodyTypeViewModel(car)
+                {
+                    BodyTypes = _context.BodyTypes.ToList()
+                };
+                return View("Create", viewModel);
             }
 
-            return View(car);
+            if (car.Id == 0)
+                _context.Cars.Add(car);
+            else
+            {
+                var carInDb = _context.Cars.Single(model => model.Id == car.Id);
+
+                carInDb.Make = car.Make;
+                carInDb.Model = car.Model;
+                carInDb.Engine = car.Engine;
+                carInDb.BodyType = car.BodyType;
+                carInDb.BodyTypeId = car.BodyTypeId;
+                carInDb.NumberOfDoors = car.NumberOfDoors;
+                carInDb.NumberOfWheels = car.NumberOfWheels;
+            }
+            _context.SaveChanges();
+
+            var item = new CarBodyTypeViewModel(car);
+            return RedirectToAction("Details", new { id = item.Id });
+
+            //return RedirectToAction("Index");   
         }
-
-        //// POST: Cars/Save
-        //[HttpPost]
-        //public ActionResult Save(Car car)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        var viewModel = new VehicleFormViewModel()
-        //        {
-        //            MovieTypes = _context.MovieTypes.ToList()
-        //        };
-        //        return View("MovieForm", viewModel);
-        //    }
-
-        //    if (movie.Id == 0)
-        //        _context.Movies.Add(movie);
-        //    else
-        //    {
-        //        var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
-
-        //        movieInDb.Name = movie.Name;
-        //        movieInDb.MovieTypeId = movie.MovieTypeId;
-        //        movieInDb.ReleaseDate = movie.ReleaseDate;
-        //        movieInDb.MovieType = movie.MovieType;
-        //        movieInDb.NumberInStock = movie.NumberInStock;
-        //    }
-        //    _context.SaveChanges();
-
-        //    return RedirectToAction("Index", "Movies");
-        //}
 
         // GET: Cars/Edit/5
         public ActionResult Edit(int? id)
@@ -90,7 +97,7 @@ namespace CarSalesDemo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Car car = db.Cars.Find(id);
+            Car car = _context.Cars.Find(id);
             if (car == null)
             {
                 return HttpNotFound();
@@ -105,8 +112,8 @@ namespace CarSalesDemo.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(car).State = EntityState.Modified;
-                db.SaveChanges();
+                _context.Entry(car).State = EntityState.Modified;
+                _context.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(car);
@@ -119,7 +126,7 @@ namespace CarSalesDemo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Car car = db.Cars.Find(id);
+            Car car = _context.Cars.Find(id);
             if (car == null)
             {
                 return HttpNotFound();
@@ -132,9 +139,9 @@ namespace CarSalesDemo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Car car = db.Cars.Find(id);
-            db.Cars.Remove(car);
-            db.SaveChanges();
+            Car car = _context.Cars.Find(id);
+            _context.Cars.Remove(car);
+            _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -142,7 +149,7 @@ namespace CarSalesDemo.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _context.Dispose();
             }
             base.Dispose(disposing);
         }

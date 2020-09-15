@@ -13,15 +13,15 @@ namespace CarSalesDemo.Models
         public byte VehicleTypeId { get; set; }
 
         [Required]
-        [Display(Name = "Make *")]
+        [Display(Name = "Make")]
         public string Make { get; set; }
 
         [Required]
-        [Display(Name = "Model *")]
+        [Display(Name = "Model")]
         public int Model { get; set; }
 
         [Required]
-        [Display(Name = "Engine *")]
+        [Display(Name = "Engine")]
         public string Engine { get; set; }
     }
 }

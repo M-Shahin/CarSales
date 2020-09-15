@@ -20,19 +20,15 @@
     @Html.AntiForgeryToken()
 
     <div class="form-group">
-        @Html.DropDownListFor(c => c.Vehicle.VehicleTypeId,
+        @Html.DropDownListFor(model => model.Vehicle.VehicleTypeId,
                             new SelectList(Model.VehicleTypes, "Id", "VehicleTypeName"),
                             " -- Select vehicle type -- ",
                             new { @class = "form-control" })
 
-        @Html.ValidationMessageFor(c => c.Vehicle.VehicleTypeId)
+        @Html.ValidationMessageFor(model => model.Vehicle.VehicleTypeId)
     </div>
 
-
-
     <button type="submit" class="btn btn-primary">Create</button>
-
-    @*@Html.ActionLink("Create", "Create", "Cars", null, new { @class = "btn btn-primary" })*@
 }
 
 @section scripts
