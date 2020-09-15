@@ -11,8 +11,17 @@ namespace CarSalesDemo.Models
         public int Id { get; set; }
         public VehicleType VehicleType { get; set; }
         public byte VehicleTypeId { get; set; }
+
+        [Required]
+        [Display(Name = "Make *")]
         public string Make { get; set; }
-        public byte Model { get; set; }
+
+        [Required]
+        [Display(Name = "Model *")]
+        public int Model { get; set; }
+
+        [Required]
+        [Display(Name = "Engine *")]
         public string Engine { get; set; }
     }
 }

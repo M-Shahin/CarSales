@@ -11,18 +11,31 @@
 <div class="row">
     <div class="col-md-4">
         <h2>Build your own Vehicle</h2>
-    </div>    
+    </div>
 </div>
 
-<div class="form-group">
-    @Html.DropDownListFor(c => c.Vehicle.VehicleTypeId, 
-                        new SelectList(Model.VehicleTypes, "Id", "VehicleTypeName"), 
-                        "-- Select Vehicle Type --",
-                        new { @class = "form-control" })
+@using (Html.BeginForm("Create", "Cars", FormMethod.Get))
 
-    @*@Html.ValidationMessageFor(m => m.VehicleTypeId)*@
-</div>
+{
+    @Html.AntiForgeryToken()
 
-@Html.ActionLink("Create", "Create", "Cars", null, new { @class = "btn btn-primary"})
+    <div class="form-group">
+        @Html.DropDownListFor(c => c.Vehicle.VehicleTypeId,
+                            new SelectList(Model.VehicleTypes, "Id", "VehicleTypeName"),
+                            " -- Select vehicle type -- ",
+                            new { @class = "form-control" })
 
-@*<button type="submit" class="btn btn-primary">Create</button>*@
+        @Html.ValidationMessageFor(c => c.Vehicle.VehicleTypeId)
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">Create</button>
+
+    @*@Html.ActionLink("Create", "Create", "Cars", null, new { @class = "btn btn-primary" })*@
+}
+
+@section scripts
+            {
+    @Scripts.Render("~/bundles/jqueryval")
+}
