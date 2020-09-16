@@ -338,9 +338,4 @@ C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.
 C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.csproj.CopyComplete
 C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.dll
 C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.pdb
-C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.Migrations.UpdateVehicleTypeTable.resources
-C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.Migrations.UpdateVehicleTypesTable.resources
-C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.Migrations.addRequiredPropertiesForVehicle.resources
-C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.Migrations.updateDataTypeInVehicle.resources
-C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.Migrations.AddCarBodyTypeViewModel.resources
-C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.Migrations.PopulateCarBodyTypes.resources
+C:\Users\smsha\Desktop\C#_Practice\CarSales\CarSalesDemo\obj\Debug\CarSalesDemo.Migrations.updateFrmgit.resources

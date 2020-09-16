@@ -202,29 +202,9 @@
     <Compile Include="Migrations\202009140428032_DeleteVehicleTypePopulation.Designer.cs">
       <DependentUpon>202009140428032_DeleteVehicleTypePopulation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009150157139_UpdateVehicleTypeTable.cs" />
-    <Compile Include="Migrations\202009150157139_UpdateVehicleTypeTable.Designer.cs">
-      <DependentUpon>202009150157139_UpdateVehicleTypeTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009150221143_UpdateVehicleTypesTable.cs" />
-    <Compile Include="Migrations\202009150221143_UpdateVehicleTypesTable.Designer.cs">
-      <DependentUpon>202009150221143_UpdateVehicleTypesTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009150247010_addRequiredPropertiesForVehicle.cs" />
-    <Compile Include="Migrations\202009150247010_addRequiredPropertiesForVehicle.Designer.cs">
-      <DependentUpon>202009150247010_addRequiredPropertiesForVehicle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009150250391_updateDataTypeInVehicle.cs" />
-    <Compile Include="Migrations\202009150250391_updateDataTypeInVehicle.Designer.cs">
-      <DependentUpon>202009150250391_updateDataTypeInVehicle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009150640402_AddCarBodyTypeViewModel.cs" />
-    <Compile Include="Migrations\202009150640402_AddCarBodyTypeViewModel.Designer.cs">
-      <DependentUpon>202009150640402_AddCarBodyTypeViewModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009150646266_PopulateCarBodyTypes.cs" />
-    <Compile Include="Migrations\202009150646266_PopulateCarBodyTypes.Designer.cs">
-      <DependentUpon>202009150646266_PopulateCarBodyTypes.cs</DependentUpon>
+    <Compile Include="Migrations\202009160022590_updateFrmgit.cs" />
+    <Compile Include="Migrations\202009160022590_updateFrmgit.Designer.cs">
+      <DependentUpon>202009160022590_updateFrmgit.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -343,23 +323,8 @@
     <EmbeddedResource Include="Migrations\202009140428032_DeleteVehicleTypePopulation.resx">
       <DependentUpon>202009140428032_DeleteVehicleTypePopulation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009150157139_UpdateVehicleTypeTable.resx">
-      <DependentUpon>202009150157139_UpdateVehicleTypeTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009150221143_UpdateVehicleTypesTable.resx">
-      <DependentUpon>202009150221143_UpdateVehicleTypesTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009150247010_addRequiredPropertiesForVehicle.resx">
-      <DependentUpon>202009150247010_addRequiredPropertiesForVehicle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009150250391_updateDataTypeInVehicle.resx">
-      <DependentUpon>202009150250391_updateDataTypeInVehicle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009150640402_AddCarBodyTypeViewModel.resx">
-      <DependentUpon>202009150640402_AddCarBodyTypeViewModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009150646266_PopulateCarBodyTypes.resx">
-      <DependentUpon>202009150646266_PopulateCarBodyTypes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009160022590_updateFrmgit.resx">
+      <DependentUpon>202009160022590_updateFrmgit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
